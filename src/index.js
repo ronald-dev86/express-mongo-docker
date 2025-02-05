@@ -9,10 +9,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Conexión a MongoDB
-mongoose.connect('mongodb://mongo:27017/mi-app', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+
+mongoose.connect('mongodb://user-api:ltzv7jXy128CcjED@federateddatabaseinstance0-ez4eb.a.query.mongodb.net/?ssl=true&authSource=admin&appName=FederatedDatabaseInstance0')
+.then(() => console.log('Conectado a MongoDB Atlas'))
+.catch((err) => console.error('Error conectando a MongoDB Atlas:', err));;
 
 // Rutas
 app.use('/users', userRoutes);
